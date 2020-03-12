@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import AppService from "../service/AppService";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash ,faEdit } from '@fortawesome/free-solid-svg-icons'
+import "../component/list.css"
 class ListComponent extends Component {
 
     constructor(props) {
@@ -48,9 +50,9 @@ class ListComponent extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center">Student Details</h2>
+                <h2 className="text-center" color="blue">Student Details</h2>
                 <button className="btn btn-danger" style={{width:'100px'}} onClick={() => this.addStudent()}> Add student</button>
-                <table className="table table-striped">
+                <table id='students'>
                     <thead>
                         <tr>
                             
@@ -58,6 +60,7 @@ class ListComponent extends Component {
                             <th>LastName</th>
                             <th>UserName</th>
                             <th>Age</th>
+                            <th>Gender</th>
                             <th>Percentage</th>
                         </tr>
                     </thead>
@@ -70,10 +73,11 @@ class ListComponent extends Component {
                                         <td>{student.lastName}</td>
                                         <td>{student.username}</td>
                                         <td>{student.age}</td>
+                                        <td>{student.gender}</td>
                                         <td>{student.percentage}</td>
                                         <td>
-                                            <button className="btn btn-success" onClick={() => this.deleteStudent(student.id)}> Delete</button>
-                                            <button className="btn btn-success" onClick={() => this.editStudent(student.id)} style={{marginLeft: '20px'}}> Edit</button>
+                                            <button className="btn btn-success" onClick={() => this.deleteStudent(student.id)}> <FontAwesomeIcon icon={faTrash} color="red"/></button>
+                                            <button className="btn btn-success" onClick={() => this.editStudent(student.id)} style={{marginLeft: '20px'}}> <FontAwesomeIcon icon={faEdit}/></button>
                                         </td>
                                     </tr>
                             )
