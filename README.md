@@ -1,4 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Commands:
+create  : npx create-react-app app_name
+run     :npm start
+npm install axios
+for icons:npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
 
 ## Available Scripts
 
